@@ -1,0 +1,22 @@
+export const foods = [
+    "watermelon",
+    "grapes",
+    "orange",
+    "apple",
+    "bananas",
+    "strawberry",
+    "pineapple",
+    "tomato",
+    "onion",
+    "potato",
+    "broccoli",
+    "cabbage",
+    "carrot",
+    "milk",
+    "pasta", 
+    "croissant", 
+    "mustard", 
+    "eggs", 
+    "jam",
+    "orange"
+]
