@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Game } from "../../common/styles";
-import Bird from "../../common/Bird/Bird";
+// import Bird from "../../common/Bird/Bird";
 import bg from "./images/bg.png";
 import { GameContainer} from "./styles";
 import Bag from './components/Bag/Bag';
@@ -24,11 +24,11 @@ class CountIntro extends Component {
                 <GameContainer>
                     <Bag items={items} />
                 </GameContainer>
-                <div
+                {/* <div
                     className="bird-bottom"
                 >
                     <Bird />
-                </div>
+                </div> */}
             </Game>
         );
     }
