@@ -8,6 +8,7 @@ import CountIntro from "./features/CountIntro/CountIntro";
 
 import { ImagesProvider } from "./contexts/ImagesContext";
 import CountSelect from "./features/CountSelect/CountSelect";
+import CountSelectButton from "./features/CountSelectButton/CountSelectButton";
 
 
 function App(props) {
@@ -24,6 +25,21 @@ function App(props) {
         <animated.div key={key} style={props}>
             <Suspense fallback={""}>
               <Switch location={item}>
+                <Route
+                    path="/count-select-button"
+                    exact
+                    render={props => (
+                      <ImagesProvider
+                        r={require.context(
+                          "./features/CountIntro/images/",
+                          true,
+                          /\.(png|jpe?g|svg)$/
+                        )}
+                      >
+                        <CountSelectButton {...props} />
+                      </ImagesProvider>
+                    )}
+                />
                 <Route
                     path="/count-select"
                     exact

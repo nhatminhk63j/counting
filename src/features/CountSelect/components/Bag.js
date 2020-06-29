@@ -7,7 +7,6 @@ import { Redirect } from "react-router-dom";
 import { games } from "../config";
 
 let turn = 0;
-let next = false;
 
 function Bag(props){
     const { images } = useImagesContext();
@@ -58,7 +57,7 @@ function Bag(props){
     } else {
         return (
             <div style={{width: "100%", height: "90%", fontSize: "3rem"}}>
-                <h3 style={{position: "absolute", width: "100%"}}><u>Tap and count 1 - {games[turn]}</u></h3>
+                <h3 style={{position: "absolute", width: "100%", textAlign: "center"}}><u>Tap and count 1 - {games[turn]}</u></h3>
                 <Container>
                     {
                         listItems.map((item, i) => {
@@ -78,7 +77,7 @@ function Bag(props){
                         })
                     }
                 </Container>
-                <div style={{position: "absolute", bottom: "2%", fontSize: "7rem", width: "100%"}}>
+                <div style={{position: "absolute", bottom: "2%", fontSize: "7rem", width: "100%", textAlign: "center"}}>
                     <h3>{number}</h3>
                 </div>
             </div>

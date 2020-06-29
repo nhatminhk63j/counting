@@ -18,17 +18,11 @@ const items = foods.map(item => {
 
 class CountIntro extends Component {
     render() {
-        
         return (
             <Game bg={bg} size="cover">
                 <GameContainer>
                     <Bag items={items} />
                 </GameContainer>
-                {/* <div
-                    className="bird-bottom"
-                >
-                    <Bird />
-                </div> */}
             </Game>
         );
     }
