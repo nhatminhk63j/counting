@@ -32,3 +32,6 @@ Màn hình giới thiệu các số lần lượt từ 1-20:
 
 Màn hình lựa chọn các vật để sao cho đủ với yêu cầu cho trước:
 ![alt text](https://res.cloudinary.com/nhatminhuet/image/upload/v1593535583/count-select_gtwql0.png)
+
+Màn hình lựa chọn các số theo đúng thứ tự từ nhỏ đến lớn 1-20:
+![alt text](https://res.cloudinary.com/nhatminhuet/image/upload/v1593536499/count-select-button_jxzfis.png)
