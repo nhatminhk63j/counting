@@ -4,6 +4,8 @@ import { Container } from "./styles";
 import { animated } from "react-spring";
 import { Redirect } from 'react-router-dom';
 
+import loadSound from "../../../../common/loadSound";
+
 var intervalID;
 var next = false;
 
@@ -21,6 +23,11 @@ function Bag(props){
 
     useEffect(() => {
         const newListItems = [...listItems];
+
+        async function loadSoundEffect(number){
+            const sound = await new Audio(loadSound(number-19));
+            sound.play();
+        }
         
         if (idx <= 19) {
             newListItems[idx] = {
@@ -28,7 +35,10 @@ function Bag(props){
                 flipped: !listItems[idx].flipped
             };
         } else if (idx <= 39) {
-            
+            // const sound = new Audio(loadSound(idx - 19));
+            // sound.play();
+            loadSoundEffect(idx);
+            console.log(idx)
             newListItems[idx - 20] = {
                 ...listItems[idx - 20],  
                 flipped: !listItems[idx - 20].flipped,

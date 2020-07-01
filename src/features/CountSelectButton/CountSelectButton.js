@@ -5,6 +5,7 @@ import { GameContainer } from "../CountIntro/styles";
 import './style.scss';
 
 import trueSfx from '../../common/sound/true.mp3';
+import falseSfx from '../../common/sound/false.mp3';
 import victorySfx from '../../common/sound/victory.mp3';
 
 import loadSound from '../../common/loadSound';
@@ -51,6 +52,10 @@ class CountSelectButton extends Component {
             this.numberSound.play();
             
             this.setState({ listItems: [...newListItems.slice(0, idx), newItem, ...newListItems.slice(idx + 1)], index: this.state.index + 1 });
+        } else {
+            this.falseSound = new Audio(falseSfx);
+            this.falseSound.volume = 0.1;
+            this.falseSound.play();
         }
     }
 

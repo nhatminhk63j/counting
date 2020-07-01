@@ -13,7 +13,6 @@ import { useImagesContext } from "../../contexts/ImagesContext";
 
 import {CarWithBubble} from  "./styles";
 
-
 export default props => {
     const [selectedGame, setSelectedGame] = useState(false);
     const { images } = useImagesContext();

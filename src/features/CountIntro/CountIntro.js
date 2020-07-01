@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Game } from "../../common/styles";
-// import Bird from "../../common/Bird/Bird";
+import Audio from "../../common/Audio";
 import bg from "./images/bg.png";
 import { GameContainer} from "./styles";
 import Bag from './components/Bag/Bag';
@@ -17,9 +17,11 @@ const items = foods.map(item => {
 })
 
 class CountIntro extends Component {
+    
     render() {
         return (
             <Game bg={bg} size="cover">
+                <Audio />
                 <GameContainer>
                     <Bag items={items} />
                 </GameContainer>

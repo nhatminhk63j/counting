@@ -3,6 +3,8 @@ import { useImagesContext } from "../../../contexts/ImagesContext";
 import { Container } from "../../CountIntro/components/Bag/styles";
 import { animated } from "react-spring";
 import { Redirect } from "react-router-dom";
+import loadSound from '../../../common/loadSound';
+import victorySfx from '../../../common/sound/victory.mp3';
 
 import { games } from "../config";
 
@@ -18,8 +20,12 @@ function Bag(props){
         let index = e.target.dataset.mssg;
         const [...newListItems] = listItems;
         if(newListItems[index].selected){
+            const sound = new Audio(loadSound(number - 1));
+            sound.play()
             setNumber(preNum => preNum - 1);
         } else {
+            const sound = new Audio(loadSound(number + 1));
+            sound.play()
             setNumber(preNum => preNum + 1);
         }
         newListItems[index].selected = !newListItems[index].selected;
@@ -28,11 +34,12 @@ function Bag(props){
     }
 
     useEffect(() => {
-        console.log(number);
         if ( games[turn] === number) {
+            const victorySound = new Audio(victorySfx);
+            victorySound.play();
             setTimeout(() => {
                 setNext(true);
-            }, 2000);
+            }, 5000);
         }
     }, [number])
 
@@ -52,7 +59,7 @@ function Bag(props){
 
     if (turn >= games.length) {
         return (
-            <Redirect to="/count-drag-and-drop" />
+            <Redirect to="/count-select-button" />
         )
     } else {
         return (

@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Audio from './common/Audio';
 
 import {BrowserRouter as Router} from 'react-router-dom';
+
 
 ReactDOM.render(
   <React.StrictMode>
