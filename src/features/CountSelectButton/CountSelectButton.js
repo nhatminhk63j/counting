@@ -3,6 +3,7 @@ import { Game } from "../../common/styles";
 import bg from "../CountIntro/images/bg.png";
 import { GameContainer } from "../CountIntro/styles";
 import './style.scss';
+import { Redirect } from 'react-router-dom'
 
 import trueSfx from '../../common/sound/true.mp3';
 import falseSfx from '../../common/sound/false.mp3';
@@ -31,7 +32,8 @@ class CountSelectButton extends Component {
         super(props);
         this.state = {
             listItems: [...arr.map(item => { return {value: item, selected: false} })],
-            index: 1
+            index: 1,
+            next: false
         }
 
         this.trueSound = new Audio(trueSfx);
@@ -62,13 +64,16 @@ class CountSelectButton extends Component {
     componentDidUpdate(){
         if(this.state.index === 21) {
             // redirect man tiep theo
+            setTimeout(() => {
+                this.setState({next: true});
+            }, 2000)
             this.victorySound.play();
         }
     }
 
     render() {
         return (
-            <Game bg={bg} size="cover">
+            this.state.next ? <Redirect to="/count-drag-and-drop" />: <Game bg={bg} size="cover">
                 <GameContainer>
                     <h2 style={{paddingTop: "1rem", fontSize: "3rem", width: "100%", textAlign: "center"}}>Please select the numbers in turn from 1 to 20!</h2>
                     <div style={styleContainer}>

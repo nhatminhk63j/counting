@@ -9,6 +9,7 @@ import CountIntro from "./features/CountIntro/CountIntro";
 import { ImagesProvider } from "./contexts/ImagesContext";
 import CountSelect from "./features/CountSelect/CountSelect";
 import CountSelectButton from "./features/CountSelectButton/CountSelectButton";
+import CountDragAndDrop from "./features/CountDragAndDrop/CountDragAndDrop";
 
 
 function App(props) {
@@ -26,6 +27,21 @@ function App(props) {
         <animated.div key={key} style={props}>
             <Suspense fallback={""}>
               <Switch location={item}>
+                <Route
+                    path="/count-drag-and-drop"
+                    exact
+                    render={props => (
+                      <ImagesProvider
+                        r={require.context(
+                          "./features/CountIntro/images/",
+                          true,
+                          /\.(png|jpe?g|svg)$/
+                        )}
+                      >
+                        <CountDragAndDrop {...props} />
+                      </ImagesProvider>
+                    )}
+                />
                 <Route
                     path="/count-select-button"
                     exact
